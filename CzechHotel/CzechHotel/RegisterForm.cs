@@ -15,11 +15,17 @@ namespace CzechHotel
         public RegisterForm()
         {
             InitializeComponent();
+            dtbBirthDate.MinDate = DateTime.Now.AddYears(-125);
+            dtbBirthDate.MaxDate = DateTime.Now.AddYears(-18);
+            dtpArrivalDate.MinDate = DateTime.Now;
+            dtpArrivalDate.MaxDate = DateTime.Now.AddMonths(1);
+            dtpDepartureDate.MinDate = dtpArrivalDate.Value.AddDays(1);
+            dtpDepartureDate.MaxDate = DateTime.Now.AddMonths(6);
         }
 
         private void tbName_Enter(object sender, EventArgs e)
         {
-            if (tbName.Text == "Name" && tbName.ForeColor == Color.Silver)
+            if (tbName.Text == "Имя" && tbName.ForeColor == Color.Silver)
 			{
                 tbName.Text = "";
                 tbName.ForeColor = Color.Black;
@@ -30,7 +36,7 @@ namespace CzechHotel
 		{
             if (tbName.Text == "")
             {
-                tbName.Text = "Name";
+                tbName.Text = "Имя";
                 tbName.ForeColor = Color.Silver;
             }
         }
@@ -43,7 +49,7 @@ namespace CzechHotel
 
         private void tbSurname_Enter(object sender, EventArgs e)
 		{
-            if (tbSurname.Text == "Surname" && tbSurname.ForeColor == Color.Silver)
+            if (tbSurname.Text == "Фамилия" && tbSurname.ForeColor == Color.Silver)
             {
                 tbSurname.Text = "";
                 tbSurname.ForeColor = Color.Black;
@@ -54,7 +60,7 @@ namespace CzechHotel
 		{
             if (tbSurname.Text == "")
             {
-                tbSurname.Text = "Surname";
+                tbSurname.Text = "Фамилия";
                 tbSurname.ForeColor = Color.Silver;
             }
         }
@@ -67,7 +73,7 @@ namespace CzechHotel
 
         private void tbGender_Enter(object sender, EventArgs e)
 		{
-            if (tbGender.Text == "Gender" && tbGender.ForeColor == Color.Silver)
+            if (tbGender.Text == "Гендер" && tbGender.ForeColor == Color.Silver)
             {
                 tbGender.Text = "";
                 tbGender.ForeColor = Color.Black;
@@ -78,7 +84,7 @@ namespace CzechHotel
 		{
             if (tbGender.Text == "")
             {
-                tbGender.Text = "Gender";
+                tbGender.Text = "Гендер";
                 tbGender.ForeColor = Color.Silver;
             }
         }
@@ -91,7 +97,7 @@ namespace CzechHotel
 
         private void mtbPassportSeries_Enter(object sender, EventArgs e)
 		{
-            if (mtbPassportSeries.Text == "Passport Series" && mtbPassportSeries.ForeColor == Color.Silver)
+            if (mtbPassportSeries.Text == "Серия паспорта" && mtbPassportSeries.ForeColor == Color.Silver)
             {
                 mtbPassportSeries.Text = "";
                 mtbPassportSeries.ForeColor = Color.Black;
@@ -103,7 +109,7 @@ namespace CzechHotel
 		{
             if (mtbPassportSeries.Text == "")
             {
-                mtbPassportSeries.Text = "Passport Series";
+                mtbPassportSeries.Text = "Серия паспорта";
                 mtbPassportSeries.ForeColor = Color.Silver;
                 mtbPassportSeries.PasswordChar = '\0';
             }
@@ -117,7 +123,7 @@ namespace CzechHotel
 
         private void mtbPassportNumber_Enter(object sender, EventArgs e)
 		{
-            if (mtbPassportNumber.Text == "Passport Number" && mtbPassportNumber.ForeColor == Color.Silver)
+            if (mtbPassportNumber.Text == "Номер паспорта" && mtbPassportNumber.ForeColor == Color.Silver)
             {
                 mtbPassportNumber.Text = "";
                 mtbPassportNumber.ForeColor = Color.Black;
@@ -129,7 +135,7 @@ namespace CzechHotel
 		{
             if (mtbPassportNumber.Text == "")
             {
-                mtbPassportNumber.Text = "Passport Number";
+                mtbPassportNumber.Text = "Номер паспорта";
                 mtbPassportNumber.ForeColor = Color.Silver;
                 mtbPassportNumber.PasswordChar = '\0';
             }
@@ -143,7 +149,7 @@ namespace CzechHotel
 
 		private void mtbPhoneNumber_Enter(object sender, EventArgs e)
 		{
-            if (mtbPhoneNumber.Text == "Phone Number" && mtbPhoneNumber.ForeColor == Color.Silver)
+            if (mtbPhoneNumber.Text == "Номер телефона" && mtbPhoneNumber.ForeColor == Color.Silver)
             {
                 mtbPhoneNumber.Text = "";
                 mtbPhoneNumber.ForeColor = Color.Black;
@@ -155,7 +161,7 @@ namespace CzechHotel
 		{
             if (mtbPhoneNumber.Text == "")
             {
-                mtbPhoneNumber.Text = "Phone Number";
+                mtbPhoneNumber.Text = "Номер телефона";
                 mtbPhoneNumber.ForeColor = Color.Silver;
                 mtbPhoneNumber.PasswordChar = '\0';
             }
@@ -167,6 +173,21 @@ namespace CzechHotel
                 e.Handled = true;
         }
 
-		
+		private void dtpArrivalDate_ValueChanged(object sender, EventArgs e)
+		{
+            if (dtpArrivalDate.Value >= dtpDepartureDate.Value)
+                dtpDepartureDate.Value = dtpArrivalDate.Value.AddDays(1);
+		}
+
+		private void dtpDepartureDate_ValueChanged(object sender, EventArgs e)
+		{
+            if (dtpArrivalDate.Value >= dtpDepartureDate.Value)
+                dtpDepartureDate.Value = dtpArrivalDate.Value.AddDays(1);
+        }
+
+		private void bSaveUser_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
