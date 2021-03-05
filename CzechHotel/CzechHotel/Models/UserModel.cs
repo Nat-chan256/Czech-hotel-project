@@ -54,8 +54,11 @@ namespace CzechHotel.Models
 
         public class GenderModel
         {
-            public GenderModel(string _name)
-            { }
+            private String Name { get; }
+            public GenderModel(string name)
+            {
+                Name = name;
+            }
         }
     }
 }

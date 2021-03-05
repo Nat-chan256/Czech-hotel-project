@@ -18,7 +18,6 @@ namespace CzechHotel.Controllers
         {
             DbController = new DBController();
         }
-
         
         List<UserModel> GetUsersData()
         {
