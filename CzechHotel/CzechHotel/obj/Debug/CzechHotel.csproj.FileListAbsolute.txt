@@ -8,3 +8,13 @@ C:\Учёба\Инструменты проектирования информа
 C:\Учёба\Инструменты проектирования информационных систем\Программы\Czech-hotel-project\CzechHotel\CzechHotel\obj\Debug\CzechHotel.csproj.CoreCompileInputs.cache
 C:\Учёба\Инструменты проектирования информационных систем\Программы\Czech-hotel-project\CzechHotel\CzechHotel\obj\Debug\CzechHotel.exe
 C:\Учёба\Инструменты проектирования информационных систем\Программы\Czech-hotel-project\CzechHotel\CzechHotel\obj\Debug\CzechHotel.pdb
+C:\My stuff\Учеба\6 семестр\Инструменты проектирования информационных систем\Czech project\CzechHotel\CzechHotel\bin\Debug\CzechHotel.exe.config
+C:\My stuff\Учеба\6 семестр\Инструменты проектирования информационных систем\Czech project\CzechHotel\CzechHotel\bin\Debug\CzechHotel.exe
+C:\My stuff\Учеба\6 семестр\Инструменты проектирования информационных систем\Czech project\CzechHotel\CzechHotel\bin\Debug\CzechHotel.pdb
+C:\My stuff\Учеба\6 семестр\Инструменты проектирования информационных систем\Czech project\CzechHotel\CzechHotel\obj\Debug\CzechHotel.csprojAssemblyReference.cache
+C:\My stuff\Учеба\6 семестр\Инструменты проектирования информационных систем\Czech project\CzechHotel\CzechHotel\obj\Debug\CzechHotel.RegisterForm.resources
+C:\My stuff\Учеба\6 семестр\Инструменты проектирования информационных систем\Czech project\CzechHotel\CzechHotel\obj\Debug\CzechHotel.Properties.Resources.resources
+C:\My stuff\Учеба\6 семестр\Инструменты проектирования информационных систем\Czech project\CzechHotel\CzechHotel\obj\Debug\CzechHotel.csproj.GenerateResource.cache
+C:\My stuff\Учеба\6 семестр\Инструменты проектирования информационных систем\Czech project\CzechHotel\CzechHotel\obj\Debug\CzechHotel.csproj.CoreCompileInputs.cache
+C:\My stuff\Учеба\6 семестр\Инструменты проектирования информационных систем\Czech project\CzechHotel\CzechHotel\obj\Debug\CzechHotel.exe
+C:\My stuff\Учеба\6 семестр\Инструменты проектирования информационных систем\Czech project\CzechHotel\CzechHotel\obj\Debug\CzechHotel.pdb

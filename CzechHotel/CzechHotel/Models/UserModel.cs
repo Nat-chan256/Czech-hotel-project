@@ -8,16 +8,51 @@ namespace CzechHotel.Models
 {
     class UserModel
     {
-        public UserModel(string _name, string _surname, int _passportSeries, bool _withChildren)
-        { }
+        public String Name { get; }
+        public String Surname { get; }
+        public GenderModel Gender { get; set; }
+        public DateTime BirthDate { get; set; }
+        public int PassportSeries { get; }
+        public int PassportNumber { get; set; }
+        public int Age { 
+            get {
+                DateTime now = DateTime.Today;
+                int age = now.Year - BirthDate.Year;
+                if (BirthDate > now.AddYears(-age)) age--;
+                return age;
+            } 
+        }
+        public String PhoneNumber { get; set; }
+        public int RoomNumber { get; set; }
+        public bool WithChildren { get; } = false;
+        public int AmountOfResidents { get; set; }
+        public DateTime ArrivalDate { get; set; }
+        public DateTime DepartureDate { get; set; }
 
-        public UserModel(string _name, string _surname, string _genderName,
-            DateTime _birthDate, int _passportSeries, int _passportNumber,
-            string _phoneNumber, bool _withChildren, int _amountOfResidents,
-            DateTime _arrivalDate, DateTime _departureDate)
-        { }
+        public UserModel(string name, string surname, int passportSeries, bool withChildren)
+        {
+            Name = name;
+            Surname = surname;
+            PassportSeries = passportSeries;
+            WithChildren = withChildren;
+        }
 
-        private class GenderModel
+        public UserModel(string name, string surname, string genderName,
+            DateTime birthDate, int passportSeries, int passportNumber,
+            string phoneNumber, bool withChildren, int amountOfResidents,
+            DateTime arrivalDate, DateTime departureDate) 
+            : this(name, surname, passportSeries, withChildren)
+        {
+            Gender = new GenderModel(genderName);
+            BirthDate = birthDate;
+            PassportNumber = passportNumber;
+            PhoneNumber = phoneNumber;
+            AmountOfResidents = amountOfResidents;
+            ArrivalDate = arrivalDate;
+            DepartureDate = departureDate;
+        }
+
+        public class GenderModel
         {
             public GenderModel(string _name)
             { }
