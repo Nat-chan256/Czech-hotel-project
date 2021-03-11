@@ -15,6 +15,7 @@ namespace CzechHotel
     public partial class RegisterForm : Form
     {
         UserController UsrController;
+        HotelController HtlController;
 
         public RegisterForm()
         {
@@ -26,7 +27,9 @@ namespace CzechHotel
             dtpDepartureDate.MinDate = dtpArrivalDate.Value.AddDays(1);
             dtpDepartureDate.MaxDate = DateTime.Now.AddMonths(6);
 
-            UsrController = new UserController();
+            DBController dbController = new DBController();
+            UsrController = new UserController(dbController);
+            HtlController = new HotelController(dbController);
         }
 
         private void tbName_Enter(object sender, EventArgs e)
