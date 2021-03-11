@@ -10,7 +10,7 @@ namespace CzechHotel.Models
     {
         public String Name { get; }
         public String Surname { get; }
-        public GenderModel Gender { get; set; }
+        public GenderModel Gender { get ; set; }
         public DateTime BirthDate { get; set; }
         public int PassportSeries { get; }
         public int PassportNumber { get; set; }
@@ -39,7 +39,7 @@ namespace CzechHotel.Models
 
         public UserModel(string name, string surname, string genderName,
             DateTime birthDate, int passportSeries, int passportNumber,
-            string phoneNumber, bool withChildren, int amountOfResidents,
+            string phoneNumber, int roomNumber, bool withChildren, int amountOfResidents,
             DateTime arrivalDate, DateTime departureDate) 
             : this(name, surname, passportSeries, withChildren)
         {
@@ -47,6 +47,7 @@ namespace CzechHotel.Models
             BirthDate = birthDate;
             PassportNumber = passportNumber;
             PhoneNumber = phoneNumber;
+            RoomNumber = roomNumber;
             AmountOfResidents = amountOfResidents;
             ArrivalDate = arrivalDate;
             DepartureDate = departureDate;
@@ -58,6 +59,11 @@ namespace CzechHotel.Models
             public GenderModel(string name)
             {
                 Name = name;
+            }
+
+            public String getName()
+            {
+                return Name;
             }
         }
     }
