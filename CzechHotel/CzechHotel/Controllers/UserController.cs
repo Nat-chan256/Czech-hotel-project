@@ -65,7 +65,7 @@ namespace CzechHotel.Controllers
 
         private class DBController
         {
-            private string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=CzechHotel.mdb;";
+            private string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\\..\\Database\\CzechHotel.mdb;";
             private OleDbConnection connection;
 
             public DBController()
