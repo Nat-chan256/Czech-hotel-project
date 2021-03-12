@@ -49,7 +49,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tbArrivalDateEditPage = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tpAddUser = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
             this.tpEdit = new System.Windows.Forms.TabPage();
             this.cbChooseUser = new System.Windows.Forms.ComboBox();
@@ -72,7 +72,7 @@
             this.nudAmountOfResidentsEditTab = new System.Windows.Forms.NumericUpDown();
             this.cbWithChildrenEditTab = new System.Windows.Forms.CheckBox();
             this.dtpArrivalDateEditTab = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bSaveChanges = new System.Windows.Forms.Button();
             this.dtpDepartureDateEditTab = new System.Windows.Forms.DateTimePicker();
             this.tpAboutHotel = new System.Windows.Forms.TabPage();
             this.rtbUnoccupiedRooms = new System.Windows.Forms.RichTextBox();
@@ -85,7 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudAmountOfResidents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRoomNumber)).BeginInit();
             this.tbArrivalDateEditPage.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tpAddUser.SuspendLayout();
             this.tpEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRoomNumberEditTab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmountOfResidentsEditTab)).BeginInit();
@@ -350,7 +350,7 @@
             // 
             // tbArrivalDateEditPage
             // 
-            this.tbArrivalDateEditPage.Controls.Add(this.tabPage1);
+            this.tbArrivalDateEditPage.Controls.Add(this.tpAddUser);
             this.tbArrivalDateEditPage.Controls.Add(this.tpEdit);
             this.tbArrivalDateEditPage.Controls.Add(this.tpAboutHotel);
             this.tbArrivalDateEditPage.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -361,37 +361,37 @@
             this.tbArrivalDateEditPage.Size = new System.Drawing.Size(657, 467);
             this.tbArrivalDateEditPage.TabIndex = 25;
             // 
-            // tabPage1
+            // tpAddUser
             // 
-            this.tabPage1.Controls.Add(this.label15);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.dtbBirthDate);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.tbName);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.tbSurname);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.tbGender);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.mtbPassportSeries);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.mtbPassportNumber);
-            this.tabPage1.Controls.Add(this.mtbPhoneNumber);
-            this.tabPage1.Controls.Add(this.nudRoomNumber);
-            this.tabPage1.Controls.Add(this.nudAmountOfResidents);
-            this.tabPage1.Controls.Add(this.cbWithChildren);
-            this.tabPage1.Controls.Add(this.dtpArrivalDate);
-            this.tabPage1.Controls.Add(this.bSaveUser);
-            this.tabPage1.Controls.Add(this.dtpDepartureDate);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(649, 441);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Добавить";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tpAddUser.Controls.Add(this.label15);
+            this.tpAddUser.Controls.Add(this.label1);
+            this.tpAddUser.Controls.Add(this.label7);
+            this.tpAddUser.Controls.Add(this.dtbBirthDate);
+            this.tpAddUser.Controls.Add(this.label6);
+            this.tpAddUser.Controls.Add(this.tbName);
+            this.tpAddUser.Controls.Add(this.label5);
+            this.tpAddUser.Controls.Add(this.tbSurname);
+            this.tpAddUser.Controls.Add(this.label4);
+            this.tpAddUser.Controls.Add(this.tbGender);
+            this.tpAddUser.Controls.Add(this.label3);
+            this.tpAddUser.Controls.Add(this.mtbPassportSeries);
+            this.tpAddUser.Controls.Add(this.label2);
+            this.tpAddUser.Controls.Add(this.mtbPassportNumber);
+            this.tpAddUser.Controls.Add(this.mtbPhoneNumber);
+            this.tpAddUser.Controls.Add(this.nudRoomNumber);
+            this.tpAddUser.Controls.Add(this.nudAmountOfResidents);
+            this.tpAddUser.Controls.Add(this.cbWithChildren);
+            this.tpAddUser.Controls.Add(this.dtpArrivalDate);
+            this.tpAddUser.Controls.Add(this.bSaveUser);
+            this.tpAddUser.Controls.Add(this.dtpDepartureDate);
+            this.tpAddUser.Location = new System.Drawing.Point(4, 22);
+            this.tpAddUser.Margin = new System.Windows.Forms.Padding(2);
+            this.tpAddUser.Name = "tpAddUser";
+            this.tpAddUser.Padding = new System.Windows.Forms.Padding(2);
+            this.tpAddUser.Size = new System.Drawing.Size(649, 441);
+            this.tpAddUser.TabIndex = 0;
+            this.tpAddUser.Text = "Добавить";
+            this.tpAddUser.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
@@ -425,7 +425,7 @@
             this.tpEdit.Controls.Add(this.nudAmountOfResidentsEditTab);
             this.tpEdit.Controls.Add(this.cbWithChildrenEditTab);
             this.tpEdit.Controls.Add(this.dtpArrivalDateEditTab);
-            this.tpEdit.Controls.Add(this.button1);
+            this.tpEdit.Controls.Add(this.bSaveChanges);
             this.tpEdit.Controls.Add(this.dtpDepartureDateEditTab);
             this.tpEdit.Location = new System.Drawing.Point(4, 22);
             this.tpEdit.Margin = new System.Windows.Forms.Padding(2);
@@ -693,15 +693,16 @@
             this.dtpArrivalDateEditTab.Value = new System.DateTime(2021, 3, 5, 0, 0, 0, 0);
             this.dtpArrivalDateEditTab.ValueChanged += new System.EventHandler(this.dtpArrivalDateEditTab_ValueChanged);
             // 
-            // button1
+            // bSaveChanges
             // 
-            this.button1.Location = new System.Drawing.Point(396, 276);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 24);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "Сохранить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bSaveChanges.Location = new System.Drawing.Point(396, 276);
+            this.bSaveChanges.Margin = new System.Windows.Forms.Padding(2);
+            this.bSaveChanges.Name = "bSaveChanges";
+            this.bSaveChanges.Size = new System.Drawing.Size(79, 24);
+            this.bSaveChanges.TabIndex = 35;
+            this.bSaveChanges.Text = "Сохранить";
+            this.bSaveChanges.UseVisualStyleBackColor = true;
+            this.bSaveChanges.Click += new System.EventHandler(this.bSaveChanges_Click);
             // 
             // dtpDepartureDateEditTab
             // 
@@ -823,8 +824,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudAmountOfResidents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRoomNumber)).EndInit();
             this.tbArrivalDateEditPage.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tpAddUser.ResumeLayout(false);
+            this.tpAddUser.PerformLayout();
             this.tpEdit.ResumeLayout(false);
             this.tpEdit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRoomNumberEditTab)).EndInit();
@@ -858,7 +859,7 @@
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabControl tbArrivalDateEditPage;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tpAddUser;
         private System.Windows.Forms.TabPage tpEdit;
         private System.Windows.Forms.TabPage tpAboutHotel;
         private System.Windows.Forms.Label label15;
@@ -881,7 +882,7 @@
         private System.Windows.Forms.NumericUpDown nudAmountOfResidentsEditTab;
         private System.Windows.Forms.CheckBox cbWithChildrenEditTab;
         private System.Windows.Forms.DateTimePicker dtpArrivalDateEditTab;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bSaveChanges;
         private System.Windows.Forms.DateTimePicker dtpDepartureDateEditTab;
         private System.Windows.Forms.ComboBox cbChooseUser;
         private System.Windows.Forms.Button bSetRoomsNumber;

@@ -34,11 +34,23 @@ namespace CzechHotel.Controllers
             return users;
         }
 
-        void SetNewUserData(string _genderName, DateTime _birthDate,
-           int _passportSeries, string _phoneNumber, int _roomNumber,
-           bool _withChildren, int _amountOfResidents, DateTime _arrivalDate,
-           DateTime _departureDate)
-        { }
+        public void SetNewUserData(UserModel user, string genderName, DateTime birthDate,
+           int passportNumber, string phoneNumber, int roomNumber,
+           bool withChildren, int amountOfResidents, DateTime arrivalDate,
+           DateTime departureDate)
+        {
+            string passNum = user.PassportNumber.ToString();
+            user.Gender = new UserModel.GenderModel(genderName);
+            user.BirthDate = birthDate;
+            user.PassportNumber = passportNumber;
+            user.PhoneNumber = phoneNumber;
+            user.RoomNumber = roomNumber;
+            user.WithChildren = withChildren;
+            user.AmountOfResidents = amountOfResidents;
+            user.ArrivalDate = arrivalDate;
+            user.DepartureDate = departureDate;
+            DbController.UpdateUser(user, passNum);
+        }
 
         public void CloseConnection()
         {

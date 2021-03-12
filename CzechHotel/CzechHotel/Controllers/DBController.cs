@@ -128,6 +128,9 @@ namespace CzechHotel.Controllers
             return result;
         }
 
+
+
+
         public void CloseConnection()
         {
             connection.Close();
@@ -145,6 +148,25 @@ namespace CzechHotel.Controllers
                 $"AmountOfResidents, ArrivalDate, DepartureDate) VALUES('{user.Name}', '{user.Surname}', '{user.Gender.Name}', '{user.BirthDate.ToString()}', " +
                 $"{user.PassportSeries}, {user.PassportNumber}, {user.PhoneNumber}, '{user.RoomNumber}',{Convert.ToInt32(user.WithChildren)}, {user.AmountOfResidents}, '{user.ArrivalDate.Date.ToString()}', " +
                 $"'{user.DepartureDate.Date.ToString()}')";
+
+            OleDbCommand command = new OleDbCommand(query, connection);
+
+            command.ExecuteNonQuery();
+        }
+
+        public void UpdateUser(UserModel user, string previousPassportNumber)
+        {
+            string query = $"UPDATE Users SET Gender = '{user.Gender.Name}', " +
+                $"BirthDate = '{user.BirthDate.ToString()}', " +
+                $"PassportNumber = {user.PassportNumber.ToString()}," +
+                $"PhoneNumber = '{user.PhoneNumber}', " +
+                $"RoomNumber = {user.RoomNumber.ToString()}, " +
+                $"WithChildren = {Convert.ToInt32(user.WithChildren).ToString()}," +
+                $"AmountOfResidents = {user.AmountOfResidents.ToString()}," +
+                $"ArrivalDate = '{user.ArrivalDate.ToString()}'," +
+                $"DepartureDate = '{user.DepartureDate.ToString()}' " +
+                $"WHERE PassportSeries = {user.PassportSeries} And " +
+                $"PassportNumber = {int.Parse(previousPassportNumber)}";
 
             OleDbCommand command = new OleDbCommand(query, connection);
 

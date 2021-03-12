@@ -24,7 +24,7 @@ namespace CzechHotel.Models
         }
         public String PhoneNumber { get; set; }
         public int RoomNumber { get; set; }
-        public bool WithChildren { get; } = false;
+        public bool WithChildren { get; set; } = false;
         public int AmountOfResidents { get; set; }
         public DateTime ArrivalDate { get; set; }
         public DateTime DepartureDate { get; set; }

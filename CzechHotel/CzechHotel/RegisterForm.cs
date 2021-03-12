@@ -100,12 +100,17 @@ namespace CzechHotel
             if (dtpArrivalDate.Value >= dtpDepartureDate.Value)
                 dtpDepartureDate.Value = dtpArrivalDate.Value.AddDays(1);
         }
-
-        private bool areAllFieldsFilled()
+        
+        //Проверяет, заполнены ли все поля на странице page
+        private bool AreAllFieldsFilled(TabPage page)
         {
-            if (tbName.ForeColor != Color.Black || tbSurname.ForeColor != Color.Black || tbGender.ForeColor != Color.Black || mtbPassportSeries.ForeColor != Color.Black
-                || mtbPassportNumber.ForeColor != Color.Black || mtbPhoneNumber.ForeColor != Color.Black)
-                return false;
+            foreach (Object child in page.Controls)
+                if (child is TextBoxBase)
+                {
+                    if (((TextBoxBase)child).ForeColor != Color.Black)
+                        return false;
+                }
+                
             return true;
         }
 
@@ -113,7 +118,7 @@ namespace CzechHotel
         private void bSaveUser_Click(object sender, EventArgs e)
 		{
             //Проверка заполненности всех полей
-            if (areAllFieldsFilled() == false)
+            if (AreAllFieldsFilled(tpAddUser) == false)
             {
                 MessageBox.Show("Не все поля заполнены.");
                 return;
@@ -224,6 +229,41 @@ namespace CzechHotel
             {
                 MessageBox.Show("Количество комнат успешно изменено.");
                 UpdateRoomsListOutput();
+            }
+        }
+
+        //Возвращает пользователя, выбранного через комбобокс во вкладке "Редактировать"
+        private UserModel GetCurrentUserOnEditPage()
+        {
+            string[] chosenUser = cbChooseUser.SelectedItem.ToString().Split();
+            List<UserModel> users = UsrController.Users;
+            foreach (UserModel user in users)
+                if (chosenUser[2] == user.PassportSeries.ToString() && chosenUser[3] == user.PassportNumber.ToString())
+                    return user;
+            return null;
+        }
+
+        private void bSaveChanges_Click(object sender, EventArgs e)
+        {
+            //Проверка заполненности всех полей
+            if (AreAllFieldsFilled(tpEdit) == false)
+            {
+                MessageBox.Show("Не все поля заполнены.");
+                return;
+            }
+
+            try
+            {
+                UserModel user = GetCurrentUserOnEditPage();
+                UsrController.SetNewUserData(user, tbGenderEditTab.Text, dtpBirthDateEditPage.Value, 
+                    int.Parse(mtbPassportNumberEditTab.Text), mtbPhoneNumberEditTab.Text, (int)nudRoomNumberEditTab.Value, 
+                    cbWithChildrenEditTab.Checked, (int)nudAmountOfResidentsEditTab.Value, dtpArrivalDateEditTab.Value, 
+                    dtpDepartureDateEditTab.Value);
+                MessageBox.Show("Данные о постояльце успешно отредактированы.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не удалось отредактировать данные о постольце.");
             }
         }
     }
