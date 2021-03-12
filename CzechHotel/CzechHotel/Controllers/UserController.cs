@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Linq;
@@ -11,9 +11,16 @@ namespace CzechHotel.Controllers
 {
     class UserController
     {
-        private List<UserModel> Users;
-        private UserModel CurrentUser;
-        private bool IsNewUser = true;
+        private List<UserModel> users;
+        public List<UserModel> Users 
+        { 
+            get 
+            {
+                if (users == null)
+                    users = DbController.GetAllUsersData();
+                return users; 
+            } 
+        }
         private DBController DbController;
 
         public UserController(DBController dbController)
@@ -21,10 +28,10 @@ namespace CzechHotel.Controllers
             DbController = dbController;
         }
         
-        List<UserModel> GetUsersData()
+        public List<UserModel> GetUsersData()
         {
-            Users = DbController.GetAllUsersData();
-            return Users;
+            users = DbController.GetAllUsersData();
+            return users;
         }
 
         void SetNewUserData(string _genderName, DateTime _birthDate,
@@ -55,11 +62,12 @@ namespace CzechHotel.Controllers
         public void Save(UserModel user)
         {
             // Предотвращаем добавление уже существующего пользователя
-            Users = DbController.GetAllUsersData();
+            users = DbController.GetAllUsersData();
             if (InUsersList(user))
                 return;
 
             DbController.SaveUser(user);
+            users.Add(user);
         }
     }
 }

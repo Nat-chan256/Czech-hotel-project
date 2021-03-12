@@ -55,16 +55,12 @@ namespace CzechHotel.Models
 
         public class GenderModel
         {
-            private String Name { get; }
+            public String Name { get; }
             public GenderModel(string name)
             {
                 Name = name;
             }
 
-            public String getName()
-            {
-                return Name;
-            }
         }
     }
 }

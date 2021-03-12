@@ -54,16 +54,31 @@ namespace CzechHotel.Controllers
                         reader[7].ToString(), /*phoneNumber*/
                         int.Parse(reader[8].ToString()), /*roomNumber*/
                         withChildren, /*withChildren*/
-                        int.Parse(reader[9].ToString()), /*amountOfResidents*/
+                        int.Parse(reader[10].ToString()), /*amountOfResidents*/
                         DateTime.Parse(datesReader[1].ToString()), /*arrivalDate*/
                         DateTime.Parse(datesReader[2].ToString()))); /*departureDate*/
-
                 }
                 catch (IndexOutOfRangeException ex)
                 {
                     continue;
                 }
             }
+
+            reader.Close();
+
+            return result;
+        }
+
+        public List<int> GetOccupiedRoomsList()
+        {
+            List<int> result = new List<int>();
+            string query = $"SELECT RoomNumber FROM Users WHERE ArrivalDate < Now() And Now() < DepartureDate";
+            OleDbCommand command = new OleDbCommand(query, connection);
+
+            OleDbDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+                result.Add(int.Parse(reader[0].ToString()));
 
             reader.Close();
 
@@ -79,8 +94,21 @@ namespace CzechHotel.Controllers
             OleDbDataReader reader = command.ExecuteReader();
 
             reader.Read();
-            int result = int.Parse(reader[0].ToString());
-            reader.Close();
+            int result = 0;
+
+            try
+            {
+                result = int.Parse(reader[0].ToString());
+            }
+            catch (Exception ex)
+            {
+                return result;
+            }
+            finally 
+            {
+                reader.Close();
+            }
+
 
             return result;
         }
@@ -114,7 +142,7 @@ namespace CzechHotel.Controllers
         public void SaveUser(UserModel user)
         {
             string query = $"INSERT INTO Users (ClientName, ClientSurname, Gender, BirthDate, PassportSeries, PassportNumber, PhoneNumber, RoomNumber, WithChildren, " +
-                $"AmountOfResidents, ArrivalDate, DepartureDate) VALUES('{user.Name}', '{user.Surname}', '{user.Gender.getName()}', '{user.BirthDate.ToString()}', " +
+                $"AmountOfResidents, ArrivalDate, DepartureDate) VALUES('{user.Name}', '{user.Surname}', '{user.Gender.Name}', '{user.BirthDate.ToString()}', " +
                 $"{user.PassportSeries}, {user.PassportNumber}, {user.PhoneNumber}, '{user.RoomNumber}',{Convert.ToInt32(user.WithChildren)}, {user.AmountOfResidents}, '{user.ArrivalDate.Date.ToString()}', " +
                 $"'{user.DepartureDate.Date.ToString()}')";
 

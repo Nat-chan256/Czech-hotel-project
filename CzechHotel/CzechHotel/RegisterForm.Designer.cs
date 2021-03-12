@@ -48,45 +48,55 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tbArrivalDateEditPage = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tpEdit = new System.Windows.Forms.TabPage();
+            this.cbChooseUser = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpBirthDateEditPage = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbNameEditTab = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbSurnameEditTab = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbGenderEditTab = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mtbPassportSeriesEditTab = new System.Windows.Forms.MaskedTextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.mtbPassportNumberEditTab = new System.Windows.Forms.MaskedTextBox();
+            this.mtbPhoneNumberEditTab = new System.Windows.Forms.MaskedTextBox();
+            this.nudRoomNumberEditTab = new System.Windows.Forms.NumericUpDown();
+            this.nudAmountOfResidentsEditTab = new System.Windows.Forms.NumericUpDown();
+            this.cbWithChildrenEditTab = new System.Windows.Forms.CheckBox();
+            this.dtpArrivalDateEditTab = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dtpDepartureDateEditTab = new System.Windows.Forms.DateTimePicker();
+            this.tpAboutHotel = new System.Windows.Forms.TabPage();
+            this.rtbUnoccupiedRooms = new System.Windows.Forms.RichTextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.rtbOccupiedRooms = new System.Windows.Forms.RichTextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.bSetRoomsNumber = new System.Windows.Forms.Button();
+            this.nudRoomsNumber = new System.Windows.Forms.NumericUpDown();
+            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmountOfResidents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRoomNumber)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.tbArrivalDateEditPage.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.tpEdit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRoomNumberEditTab)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmountOfResidentsEditTab)).BeginInit();
+            this.tpAboutHotel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRoomsNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // dtbBirthDate
             // 
             this.dtbBirthDate.Location = new System.Drawing.Point(7, 231);
-            this.dtbBirthDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtbBirthDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtbBirthDate.MaxDate = new System.DateTime(2003, 3, 5, 0, 0, 0, 0);
             this.dtbBirthDate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtbBirthDate.Name = "dtbBirthDate";
@@ -98,10 +108,11 @@
             // 
             this.tbName.ForeColor = System.Drawing.Color.Silver;
             this.tbName.Location = new System.Drawing.Point(7, 68);
-            this.tbName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(90, 20);
             this.tbName.TabIndex = 4;
+            this.tbName.Tag = "Имя";
             this.tbName.Text = "Имя";
             this.tbName.Enter += new System.EventHandler(this.tbName_Enter);
             this.tbName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbName_KeyPress);
@@ -111,36 +122,39 @@
             // 
             this.tbSurname.ForeColor = System.Drawing.Color.Silver;
             this.tbSurname.Location = new System.Drawing.Point(7, 91);
-            this.tbSurname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSurname.Margin = new System.Windows.Forms.Padding(2);
             this.tbSurname.Name = "tbSurname";
             this.tbSurname.Size = new System.Drawing.Size(90, 20);
             this.tbSurname.TabIndex = 5;
+            this.tbSurname.Tag = "Фамилия";
             this.tbSurname.Text = "Фамилия";
-            this.tbSurname.Enter += new System.EventHandler(this.tbSurname_Enter);
-            this.tbSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSurname_KeyPress);
-            this.tbSurname.Leave += new System.EventHandler(this.tbSurname_Leave);
+            this.tbSurname.Enter += new System.EventHandler(this.tbName_Enter);
+            this.tbSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbName_KeyPress);
+            this.tbSurname.Leave += new System.EventHandler(this.tbName_Leave);
             // 
             // tbGender
             // 
             this.tbGender.ForeColor = System.Drawing.Color.Silver;
             this.tbGender.Location = new System.Drawing.Point(7, 114);
-            this.tbGender.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGender.Margin = new System.Windows.Forms.Padding(2);
             this.tbGender.Name = "tbGender";
             this.tbGender.Size = new System.Drawing.Size(90, 20);
             this.tbGender.TabIndex = 6;
+            this.tbGender.Tag = "Гендер";
             this.tbGender.Text = "Гендер";
-            this.tbGender.Enter += new System.EventHandler(this.tbGender_Enter);
-            this.tbGender.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbGender_KeyPress);
-            this.tbGender.Leave += new System.EventHandler(this.tbGender_Leave);
+            this.tbGender.Enter += new System.EventHandler(this.tbName_Enter);
+            this.tbGender.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbName_KeyPress);
+            this.tbGender.Leave += new System.EventHandler(this.tbName_Leave);
             // 
             // mtbPassportSeries
             // 
             this.mtbPassportSeries.ForeColor = System.Drawing.Color.Silver;
             this.mtbPassportSeries.Location = new System.Drawing.Point(7, 136);
-            this.mtbPassportSeries.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtbPassportSeries.Margin = new System.Windows.Forms.Padding(2);
             this.mtbPassportSeries.Name = "mtbPassportSeries";
             this.mtbPassportSeries.Size = new System.Drawing.Size(90, 20);
             this.mtbPassportSeries.TabIndex = 7;
+            this.mtbPassportSeries.Tag = "Серия паспорта";
             this.mtbPassportSeries.Text = "Серия паспорта";
             this.mtbPassportSeries.Enter += new System.EventHandler(this.mtbPassportSeries_Enter);
             this.mtbPassportSeries.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbPassportSeries_KeyPress);
@@ -150,33 +164,34 @@
             // 
             this.mtbPassportNumber.ForeColor = System.Drawing.Color.Silver;
             this.mtbPassportNumber.Location = new System.Drawing.Point(7, 159);
-            this.mtbPassportNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtbPassportNumber.Margin = new System.Windows.Forms.Padding(2);
             this.mtbPassportNumber.Name = "mtbPassportNumber";
             this.mtbPassportNumber.Size = new System.Drawing.Size(90, 20);
             this.mtbPassportNumber.TabIndex = 8;
+            this.mtbPassportNumber.Tag = "Номер паспорта";
             this.mtbPassportNumber.Text = "Номер паспорта";
-            this.mtbPassportNumber.Enter += new System.EventHandler(this.mtbPassportNumber_Enter);
-            this.mtbPassportNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbPassportNumber_KeyPress);
-            this.mtbPassportNumber.Leave += new System.EventHandler(this.mtbPassportNumber_Leave);
+            this.mtbPassportNumber.Enter += new System.EventHandler(this.mtbPassportSeries_Enter);
+            this.mtbPassportNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbPassportSeries_KeyPress);
+            this.mtbPassportNumber.Leave += new System.EventHandler(this.mtbPassportSeries_Leave);
             // 
             // mtbPhoneNumber
             // 
             this.mtbPhoneNumber.ForeColor = System.Drawing.Color.Silver;
             this.mtbPhoneNumber.Location = new System.Drawing.Point(7, 182);
-            this.mtbPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtbPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.mtbPhoneNumber.Name = "mtbPhoneNumber";
             this.mtbPhoneNumber.Size = new System.Drawing.Size(90, 20);
             this.mtbPhoneNumber.TabIndex = 9;
-            this.mtbPhoneNumber.Tag = "";
+            this.mtbPhoneNumber.Tag = "Номер телефона";
             this.mtbPhoneNumber.Text = "Номер телефона";
-            this.mtbPhoneNumber.Enter += new System.EventHandler(this.mtbPhoneNumber_Enter);
-            this.mtbPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbPhoneNumber_KeyPress);
-            this.mtbPhoneNumber.Leave += new System.EventHandler(this.mtbPhoneNumber_Leave);
+            this.mtbPhoneNumber.Enter += new System.EventHandler(this.mtbPassportSeries_Enter);
+            this.mtbPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbPassportSeries_KeyPress);
+            this.mtbPhoneNumber.Leave += new System.EventHandler(this.mtbPassportSeries_Leave);
             // 
             // nudAmountOfResidents
             // 
             this.nudAmountOfResidents.Location = new System.Drawing.Point(304, 89);
-            this.nudAmountOfResidents.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudAmountOfResidents.Margin = new System.Windows.Forms.Padding(2);
             this.nudAmountOfResidents.Maximum = new decimal(new int[] {
             50,
             0,
@@ -199,7 +214,7 @@
             // dtpArrivalDate
             // 
             this.dtpArrivalDate.Location = new System.Drawing.Point(244, 110);
-            this.dtpArrivalDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpArrivalDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpArrivalDate.MinDate = new System.DateTime(2021, 3, 5, 0, 0, 0, 0);
             this.dtpArrivalDate.Name = "dtpArrivalDate";
             this.dtpArrivalDate.Size = new System.Drawing.Size(151, 20);
@@ -210,18 +225,18 @@
             // dtpDepartureDate
             // 
             this.dtpDepartureDate.Location = new System.Drawing.Point(244, 132);
-            this.dtpDepartureDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDepartureDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDepartureDate.MinDate = new System.DateTime(2021, 3, 6, 0, 0, 0, 0);
             this.dtpDepartureDate.Name = "dtpDepartureDate";
             this.dtpDepartureDate.Size = new System.Drawing.Size(151, 20);
             this.dtpDepartureDate.TabIndex = 14;
             this.dtpDepartureDate.Value = new System.DateTime(2021, 3, 6, 0, 0, 0, 0);
-            this.dtpDepartureDate.ValueChanged += new System.EventHandler(this.dtpDepartureDate_ValueChanged);
+            this.dtpDepartureDate.ValueChanged += new System.EventHandler(this.dtpArrivalDate_ValueChanged);
             // 
             // bSaveUser
             // 
             this.bSaveUser.Location = new System.Drawing.Point(392, 237);
-            this.bSaveUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bSaveUser.Margin = new System.Windows.Forms.Padding(2);
             this.bSaveUser.Name = "bSaveUser";
             this.bSaveUser.Size = new System.Drawing.Size(79, 24);
             this.bSaveUser.TabIndex = 15;
@@ -233,7 +248,7 @@
             // 
             this.cbWithChildren.AutoSize = true;
             this.cbWithChildren.Location = new System.Drawing.Point(404, 88);
-            this.cbWithChildren.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbWithChildren.Margin = new System.Windows.Forms.Padding(2);
             this.cbWithChildren.Name = "cbWithChildren";
             this.cbWithChildren.Size = new System.Drawing.Size(73, 17);
             this.cbWithChildren.TabIndex = 16;
@@ -243,7 +258,7 @@
             // nudRoomNumber
             // 
             this.nudRoomNumber.Location = new System.Drawing.Point(304, 67);
-            this.nudRoomNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudRoomNumber.Margin = new System.Windows.Forms.Padding(2);
             this.nudRoomNumber.Maximum = new decimal(new int[] {
             250,
             0,
@@ -333,18 +348,18 @@
             this.label7.TabIndex = 24;
             this.label7.Text = "Дата выселения";
             // 
-            // tabControl1
+            // tbArrivalDateEditPage
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(657, 467);
-            this.tabControl1.TabIndex = 25;
+            this.tbArrivalDateEditPage.Controls.Add(this.tabPage1);
+            this.tbArrivalDateEditPage.Controls.Add(this.tpEdit);
+            this.tbArrivalDateEditPage.Controls.Add(this.tpAboutHotel);
+            this.tbArrivalDateEditPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbArrivalDateEditPage.Location = new System.Drawing.Point(0, 0);
+            this.tbArrivalDateEditPage.Margin = new System.Windows.Forms.Padding(2);
+            this.tbArrivalDateEditPage.Name = "tbArrivalDateEditPage";
+            this.tbArrivalDateEditPage.SelectedIndex = 0;
+            this.tbArrivalDateEditPage.Size = new System.Drawing.Size(657, 467);
+            this.tbArrivalDateEditPage.TabIndex = 25;
             // 
             // tabPage1
             // 
@@ -370,9 +385,9 @@
             this.tabPage1.Controls.Add(this.bSaveUser);
             this.tabPage1.Controls.Add(this.dtpDepartureDate);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(649, 441);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Добавить";
@@ -388,37 +403,49 @@
             this.label15.TabIndex = 25;
             this.label15.Text = "Занесение нового постояльца в базу данных.";
             // 
-            // tabPage2
+            // tpEdit
             // 
-            this.tabPage2.Controls.Add(this.label16);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.dateTimePicker1);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.textBox1);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.maskedTextBox1);
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.maskedTextBox2);
-            this.tabPage2.Controls.Add(this.maskedTextBox3);
-            this.tabPage2.Controls.Add(this.numericUpDown1);
-            this.tabPage2.Controls.Add(this.numericUpDown2);
-            this.tabPage2.Controls.Add(this.checkBox1);
-            this.tabPage2.Controls.Add(this.dateTimePicker2);
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.dateTimePicker3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage2.Size = new System.Drawing.Size(649, 441);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Редактировать";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tpEdit.Controls.Add(this.cbChooseUser);
+            this.tpEdit.Controls.Add(this.label16);
+            this.tpEdit.Controls.Add(this.label8);
+            this.tpEdit.Controls.Add(this.label9);
+            this.tpEdit.Controls.Add(this.dtpBirthDateEditPage);
+            this.tpEdit.Controls.Add(this.label10);
+            this.tpEdit.Controls.Add(this.tbNameEditTab);
+            this.tpEdit.Controls.Add(this.label11);
+            this.tpEdit.Controls.Add(this.tbSurnameEditTab);
+            this.tpEdit.Controls.Add(this.label12);
+            this.tpEdit.Controls.Add(this.tbGenderEditTab);
+            this.tpEdit.Controls.Add(this.label13);
+            this.tpEdit.Controls.Add(this.mtbPassportSeriesEditTab);
+            this.tpEdit.Controls.Add(this.label14);
+            this.tpEdit.Controls.Add(this.mtbPassportNumberEditTab);
+            this.tpEdit.Controls.Add(this.mtbPhoneNumberEditTab);
+            this.tpEdit.Controls.Add(this.nudRoomNumberEditTab);
+            this.tpEdit.Controls.Add(this.nudAmountOfResidentsEditTab);
+            this.tpEdit.Controls.Add(this.cbWithChildrenEditTab);
+            this.tpEdit.Controls.Add(this.dtpArrivalDateEditTab);
+            this.tpEdit.Controls.Add(this.button1);
+            this.tpEdit.Controls.Add(this.dtpDepartureDateEditTab);
+            this.tpEdit.Location = new System.Drawing.Point(4, 22);
+            this.tpEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.tpEdit.Name = "tpEdit";
+            this.tpEdit.Padding = new System.Windows.Forms.Padding(2);
+            this.tpEdit.Size = new System.Drawing.Size(649, 441);
+            this.tpEdit.TabIndex = 1;
+            this.tpEdit.Text = "Редактировать";
+            this.tpEdit.UseVisualStyleBackColor = true;
+            // 
+            // cbChooseUser
+            // 
+            this.cbChooseUser.FormattingEnabled = true;
+            this.cbChooseUser.Location = new System.Drawing.Point(5, 30);
+            this.cbChooseUser.Name = "cbChooseUser";
+            this.cbChooseUser.Size = new System.Drawing.Size(195, 21);
+            this.cbChooseUser.TabIndex = 46;
+            this.cbChooseUser.Text = "Выбор постояльца";
+            this.cbChooseUser.SelectedValueChanged += new System.EventHandler(this.cbChooseUser_SelectedValueChanged);
+            this.cbChooseUser.Click += new System.EventHandler(this.cbChooseUser_Click);
             // 
             // label16
             // 
@@ -433,7 +460,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(4, 41);
+            this.label8.Location = new System.Drawing.Point(8, 78);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(87, 13);
@@ -443,234 +470,368 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(151, 138);
+            this.label9.Location = new System.Drawing.Point(155, 175);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 13);
             this.label9.TabIndex = 44;
             this.label9.Text = "Дата выселения";
             // 
-            // dateTimePicker1
+            // dtpBirthDateEditPage
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(7, 232);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2003, 3, 5, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
-            this.dateTimePicker1.TabIndex = 25;
-            this.dateTimePicker1.Value = new System.DateTime(2003, 3, 5, 0, 0, 0, 0);
+            this.dtpBirthDateEditPage.Location = new System.Drawing.Point(11, 269);
+            this.dtpBirthDateEditPage.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpBirthDateEditPage.MaxDate = new System.DateTime(2003, 3, 5, 0, 0, 0, 0);
+            this.dtpBirthDateEditPage.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtpBirthDateEditPage.Name = "dtpBirthDateEditPage";
+            this.dtpBirthDateEditPage.Size = new System.Drawing.Size(151, 20);
+            this.dtpBirthDateEditPage.TabIndex = 25;
+            this.dtpBirthDateEditPage.Value = new System.DateTime(2003, 3, 5, 0, 0, 0, 0);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(151, 115);
+            this.label10.Location = new System.Drawing.Point(155, 152);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(90, 13);
             this.label10.TabIndex = 43;
             this.label10.Text = "Дата заселения";
             // 
-            // textBox1
+            // tbNameEditTab
             // 
-            this.textBox1.ForeColor = System.Drawing.Color.Silver;
-            this.textBox1.Location = new System.Drawing.Point(7, 70);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(90, 20);
-            this.textBox1.TabIndex = 26;
-            this.textBox1.Text = "Имя";
+            this.tbNameEditTab.ForeColor = System.Drawing.Color.Silver;
+            this.tbNameEditTab.Location = new System.Drawing.Point(11, 107);
+            this.tbNameEditTab.Margin = new System.Windows.Forms.Padding(2);
+            this.tbNameEditTab.Name = "tbNameEditTab";
+            this.tbNameEditTab.ReadOnly = true;
+            this.tbNameEditTab.Size = new System.Drawing.Size(90, 20);
+            this.tbNameEditTab.TabIndex = 26;
+            this.tbNameEditTab.Tag = "Имя";
+            this.tbNameEditTab.Text = "Имя";
+            this.tbNameEditTab.Enter += new System.EventHandler(this.tbName_Enter);
+            this.tbNameEditTab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbName_KeyPress);
+            this.tbNameEditTab.Leave += new System.EventHandler(this.tbName_Leave);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(4, 216);
+            this.label11.Location = new System.Drawing.Point(8, 253);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(86, 13);
             this.label11.TabIndex = 42;
             this.label11.Text = "Дата рождения";
             // 
-            // textBox2
+            // tbSurnameEditTab
             // 
-            this.textBox2.ForeColor = System.Drawing.Color.Silver;
-            this.textBox2.Location = new System.Drawing.Point(7, 93);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(90, 20);
-            this.textBox2.TabIndex = 27;
-            this.textBox2.Text = "Фамилия";
+            this.tbSurnameEditTab.ForeColor = System.Drawing.Color.Silver;
+            this.tbSurnameEditTab.Location = new System.Drawing.Point(11, 130);
+            this.tbSurnameEditTab.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSurnameEditTab.Name = "tbSurnameEditTab";
+            this.tbSurnameEditTab.ReadOnly = true;
+            this.tbSurnameEditTab.Size = new System.Drawing.Size(90, 20);
+            this.tbSurnameEditTab.TabIndex = 27;
+            this.tbSurnameEditTab.Tag = "Фамилия";
+            this.tbSurnameEditTab.Text = "Фамилия";
+            this.tbSurnameEditTab.Enter += new System.EventHandler(this.tbName_Enter);
+            this.tbSurnameEditTab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbName_KeyPress);
+            this.tbSurnameEditTab.Leave += new System.EventHandler(this.tbName_Leave);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(151, 93);
+            this.label12.Location = new System.Drawing.Point(155, 130);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(145, 13);
             this.label12.TabIndex = 41;
             this.label12.Text = "Количество заселяющихся";
             // 
-            // textBox3
+            // tbGenderEditTab
             // 
-            this.textBox3.ForeColor = System.Drawing.Color.Silver;
-            this.textBox3.Location = new System.Drawing.Point(7, 115);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(90, 20);
-            this.textBox3.TabIndex = 28;
-            this.textBox3.Text = "Гендер";
+            this.tbGenderEditTab.ForeColor = System.Drawing.Color.Silver;
+            this.tbGenderEditTab.Location = new System.Drawing.Point(11, 152);
+            this.tbGenderEditTab.Margin = new System.Windows.Forms.Padding(2);
+            this.tbGenderEditTab.Name = "tbGenderEditTab";
+            this.tbGenderEditTab.Size = new System.Drawing.Size(90, 20);
+            this.tbGenderEditTab.TabIndex = 28;
+            this.tbGenderEditTab.Tag = "Гендер";
+            this.tbGenderEditTab.Text = "Гендер";
+            this.tbGenderEditTab.Enter += new System.EventHandler(this.tbName_Enter);
+            this.tbGenderEditTab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbName_KeyPress);
+            this.tbGenderEditTab.Leave += new System.EventHandler(this.tbName_Leave);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(151, 70);
+            this.label13.Location = new System.Drawing.Point(155, 107);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(89, 13);
             this.label13.TabIndex = 40;
             this.label13.Text = "Номер комнаты";
             // 
-            // maskedTextBox1
+            // mtbPassportSeriesEditTab
             // 
-            this.maskedTextBox1.ForeColor = System.Drawing.Color.Silver;
-            this.maskedTextBox1.Location = new System.Drawing.Point(7, 138);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.ReadOnly = true;
-            this.maskedTextBox1.Size = new System.Drawing.Size(90, 20);
-            this.maskedTextBox1.TabIndex = 29;
-            this.maskedTextBox1.Text = "Серия паспорта";
+            this.mtbPassportSeriesEditTab.ForeColor = System.Drawing.Color.Silver;
+            this.mtbPassportSeriesEditTab.Location = new System.Drawing.Point(11, 175);
+            this.mtbPassportSeriesEditTab.Margin = new System.Windows.Forms.Padding(2);
+            this.mtbPassportSeriesEditTab.Name = "mtbPassportSeriesEditTab";
+            this.mtbPassportSeriesEditTab.ReadOnly = true;
+            this.mtbPassportSeriesEditTab.Size = new System.Drawing.Size(90, 20);
+            this.mtbPassportSeriesEditTab.TabIndex = 29;
+            this.mtbPassportSeriesEditTab.Tag = "Серия паспорта";
+            this.mtbPassportSeriesEditTab.Text = "Серия паспорта";
+            this.mtbPassportSeriesEditTab.Enter += new System.EventHandler(this.mtbPassportSeries_Enter);
+            this.mtbPassportSeriesEditTab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbPassportSeries_KeyPress);
+            this.mtbPassportSeriesEditTab.Leave += new System.EventHandler(this.mtbPassportSeries_Leave);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(151, 41);
+            this.label14.Location = new System.Drawing.Point(155, 78);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(72, 13);
             this.label14.TabIndex = 39;
             this.label14.Text = "О заселении";
             // 
-            // maskedTextBox2
+            // mtbPassportNumberEditTab
             // 
-            this.maskedTextBox2.ForeColor = System.Drawing.Color.Silver;
-            this.maskedTextBox2.Location = new System.Drawing.Point(7, 161);
-            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.ReadOnly = true;
-            this.maskedTextBox2.Size = new System.Drawing.Size(90, 20);
-            this.maskedTextBox2.TabIndex = 30;
-            this.maskedTextBox2.Text = "Номер паспорта";
+            this.mtbPassportNumberEditTab.ForeColor = System.Drawing.Color.Silver;
+            this.mtbPassportNumberEditTab.Location = new System.Drawing.Point(11, 198);
+            this.mtbPassportNumberEditTab.Margin = new System.Windows.Forms.Padding(2);
+            this.mtbPassportNumberEditTab.Name = "mtbPassportNumberEditTab";
+            this.mtbPassportNumberEditTab.Size = new System.Drawing.Size(90, 20);
+            this.mtbPassportNumberEditTab.TabIndex = 30;
+            this.mtbPassportNumberEditTab.Tag = "Номер паспорта";
+            this.mtbPassportNumberEditTab.Text = "Номер паспорта";
+            this.mtbPassportNumberEditTab.Enter += new System.EventHandler(this.mtbPassportSeries_Enter);
+            this.mtbPassportNumberEditTab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbPassportSeries_KeyPress);
+            this.mtbPassportNumberEditTab.Leave += new System.EventHandler(this.mtbPassportSeries_Leave);
             // 
-            // maskedTextBox3
+            // mtbPhoneNumberEditTab
             // 
-            this.maskedTextBox3.ForeColor = System.Drawing.Color.Silver;
-            this.maskedTextBox3.Location = new System.Drawing.Point(7, 184);
-            this.maskedTextBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(90, 20);
-            this.maskedTextBox3.TabIndex = 31;
-            this.maskedTextBox3.Tag = "";
-            this.maskedTextBox3.Text = "Номер телефона";
+            this.mtbPhoneNumberEditTab.ForeColor = System.Drawing.Color.Silver;
+            this.mtbPhoneNumberEditTab.Location = new System.Drawing.Point(11, 221);
+            this.mtbPhoneNumberEditTab.Margin = new System.Windows.Forms.Padding(2);
+            this.mtbPhoneNumberEditTab.Name = "mtbPhoneNumberEditTab";
+            this.mtbPhoneNumberEditTab.Size = new System.Drawing.Size(90, 20);
+            this.mtbPhoneNumberEditTab.TabIndex = 31;
+            this.mtbPhoneNumberEditTab.Tag = "Номер телефона";
+            this.mtbPhoneNumberEditTab.Text = "Номер телефона";
+            this.mtbPhoneNumberEditTab.Enter += new System.EventHandler(this.mtbPassportSeries_Enter);
+            this.mtbPhoneNumberEditTab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbPassportSeries_KeyPress);
+            this.mtbPhoneNumberEditTab.Leave += new System.EventHandler(this.mtbPassportSeries_Leave);
             // 
-            // numericUpDown1
+            // nudRoomNumberEditTab
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(304, 68);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.nudRoomNumberEditTab.Location = new System.Drawing.Point(308, 105);
+            this.nudRoomNumberEditTab.Margin = new System.Windows.Forms.Padding(2);
+            this.nudRoomNumberEditTab.Maximum = new decimal(new int[] {
             250,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(90, 20);
-            this.numericUpDown1.TabIndex = 37;
+            this.nudRoomNumberEditTab.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudRoomNumberEditTab.Name = "nudRoomNumberEditTab";
+            this.nudRoomNumberEditTab.Size = new System.Drawing.Size(90, 20);
+            this.nudRoomNumberEditTab.TabIndex = 37;
+            this.nudRoomNumberEditTab.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // numericUpDown2
+            // nudAmountOfResidentsEditTab
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(304, 91);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.nudAmountOfResidentsEditTab.Location = new System.Drawing.Point(308, 128);
+            this.nudAmountOfResidentsEditTab.Margin = new System.Windows.Forms.Padding(2);
+            this.nudAmountOfResidentsEditTab.Maximum = new decimal(new int[] {
             50,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(90, 20);
-            this.numericUpDown2.TabIndex = 32;
+            this.nudAmountOfResidentsEditTab.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudAmountOfResidentsEditTab.Name = "nudAmountOfResidentsEditTab";
+            this.nudAmountOfResidentsEditTab.Size = new System.Drawing.Size(90, 20);
+            this.nudAmountOfResidentsEditTab.TabIndex = 32;
+            this.nudAmountOfResidentsEditTab.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // checkBox1
+            // cbWithChildrenEditTab
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(404, 89);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(73, 17);
-            this.checkBox1.TabIndex = 36;
-            this.checkBox1.Text = "С детьми";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbWithChildrenEditTab.AutoSize = true;
+            this.cbWithChildrenEditTab.Location = new System.Drawing.Point(408, 126);
+            this.cbWithChildrenEditTab.Margin = new System.Windows.Forms.Padding(2);
+            this.cbWithChildrenEditTab.Name = "cbWithChildrenEditTab";
+            this.cbWithChildrenEditTab.Size = new System.Drawing.Size(73, 17);
+            this.cbWithChildrenEditTab.TabIndex = 36;
+            this.cbWithChildrenEditTab.Text = "С детьми";
+            this.cbWithChildrenEditTab.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker2
+            // dtpArrivalDateEditTab
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(244, 111);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dateTimePicker2.MinDate = new System.DateTime(2021, 3, 5, 0, 0, 0, 0);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(151, 20);
-            this.dateTimePicker2.TabIndex = 33;
-            this.dateTimePicker2.Value = new System.DateTime(2021, 3, 5, 0, 0, 0, 0);
+            this.dtpArrivalDateEditTab.Location = new System.Drawing.Point(248, 148);
+            this.dtpArrivalDateEditTab.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpArrivalDateEditTab.MinDate = new System.DateTime(2021, 3, 5, 0, 0, 0, 0);
+            this.dtpArrivalDateEditTab.Name = "dtpArrivalDateEditTab";
+            this.dtpArrivalDateEditTab.Size = new System.Drawing.Size(151, 20);
+            this.dtpArrivalDateEditTab.TabIndex = 33;
+            this.dtpArrivalDateEditTab.Value = new System.DateTime(2021, 3, 5, 0, 0, 0, 0);
+            this.dtpArrivalDateEditTab.ValueChanged += new System.EventHandler(this.dtpArrivalDateEditTab_ValueChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(392, 239);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(396, 276);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(79, 24);
             this.button1.TabIndex = 35;
             this.button1.Text = "Сохранить";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker3
+            // dtpDepartureDateEditTab
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(244, 134);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dateTimePicker3.MinDate = new System.DateTime(2021, 3, 6, 0, 0, 0, 0);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(151, 20);
-            this.dateTimePicker3.TabIndex = 34;
-            this.dateTimePicker3.Value = new System.DateTime(2021, 3, 6, 0, 0, 0, 0);
+            this.dtpDepartureDateEditTab.Location = new System.Drawing.Point(248, 171);
+            this.dtpDepartureDateEditTab.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpDepartureDateEditTab.MinDate = new System.DateTime(2021, 3, 6, 0, 0, 0, 0);
+            this.dtpDepartureDateEditTab.Name = "dtpDepartureDateEditTab";
+            this.dtpDepartureDateEditTab.Size = new System.Drawing.Size(151, 20);
+            this.dtpDepartureDateEditTab.TabIndex = 34;
+            this.dtpDepartureDateEditTab.Value = new System.DateTime(2021, 3, 6, 0, 0, 0, 0);
+            this.dtpDepartureDateEditTab.ValueChanged += new System.EventHandler(this.dtpArrivalDateEditTab_ValueChanged);
             // 
-            // tabPage3
+            // tpAboutHotel
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage3.Size = new System.Drawing.Size(649, 441);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Об отеле";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tpAboutHotel.Controls.Add(this.rtbUnoccupiedRooms);
+            this.tpAboutHotel.Controls.Add(this.label19);
+            this.tpAboutHotel.Controls.Add(this.rtbOccupiedRooms);
+            this.tpAboutHotel.Controls.Add(this.label18);
+            this.tpAboutHotel.Controls.Add(this.bSetRoomsNumber);
+            this.tpAboutHotel.Controls.Add(this.nudRoomsNumber);
+            this.tpAboutHotel.Controls.Add(this.label17);
+            this.tpAboutHotel.Location = new System.Drawing.Point(4, 22);
+            this.tpAboutHotel.Margin = new System.Windows.Forms.Padding(2);
+            this.tpAboutHotel.Name = "tpAboutHotel";
+            this.tpAboutHotel.Padding = new System.Windows.Forms.Padding(2);
+            this.tpAboutHotel.Size = new System.Drawing.Size(649, 441);
+            this.tpAboutHotel.TabIndex = 2;
+            this.tpAboutHotel.Text = "Об отеле";
+            this.tpAboutHotel.UseVisualStyleBackColor = true;
+            this.tpAboutHotel.Enter += new System.EventHandler(this.tpAboutHotel_Enter);
+            // 
+            // rtbUnoccupiedRooms
+            // 
+            this.rtbUnoccupiedRooms.Location = new System.Drawing.Point(11, 249);
+            this.rtbUnoccupiedRooms.Name = "rtbUnoccupiedRooms";
+            this.rtbUnoccupiedRooms.ReadOnly = true;
+            this.rtbUnoccupiedRooms.Size = new System.Drawing.Size(292, 104);
+            this.rtbUnoccupiedRooms.TabIndex = 6;
+            this.rtbUnoccupiedRooms.Text = "";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(8, 224);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(142, 13);
+            this.label19.TabIndex = 5;
+            this.label19.Text = "Список свободных комнат";
+            // 
+            // rtbOccupiedRooms
+            // 
+            this.rtbOccupiedRooms.Location = new System.Drawing.Point(11, 104);
+            this.rtbOccupiedRooms.Name = "rtbOccupiedRooms";
+            this.rtbOccupiedRooms.ReadOnly = true;
+            this.rtbOccupiedRooms.Size = new System.Drawing.Size(292, 104);
+            this.rtbOccupiedRooms.TabIndex = 4;
+            this.rtbOccupiedRooms.Text = "";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(8, 79);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(129, 13);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Список занятых комнат";
+            // 
+            // bSetRoomsNumber
+            // 
+            this.bSetRoomsNumber.Location = new System.Drawing.Point(228, 21);
+            this.bSetRoomsNumber.Name = "bSetRoomsNumber";
+            this.bSetRoomsNumber.Size = new System.Drawing.Size(75, 23);
+            this.bSetRoomsNumber.TabIndex = 2;
+            this.bSetRoomsNumber.Text = "Задать";
+            this.bSetRoomsNumber.UseVisualStyleBackColor = true;
+            this.bSetRoomsNumber.Click += new System.EventHandler(this.bSetRoomsNumber_Click);
+            // 
+            // nudRoomsNumber
+            // 
+            this.nudRoomsNumber.Location = new System.Drawing.Point(161, 24);
+            this.nudRoomsNumber.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.nudRoomsNumber.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudRoomsNumber.Name = "nudRoomsNumber";
+            this.nudRoomsNumber.Size = new System.Drawing.Size(42, 20);
+            this.nudRoomsNumber.TabIndex = 1;
+            this.nudRoomsNumber.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(8, 26);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(147, 13);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Количество комнат в отеле";
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 467);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tbArrivalDateEditPage);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegisterForm";
             this.Text = "Форма регистрации";
             ((System.ComponentModel.ISupportInitialize)(this.nudAmountOfResidents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRoomNumber)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.tbArrivalDateEditPage.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            this.tpEdit.ResumeLayout(false);
+            this.tpEdit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRoomNumberEditTab)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmountOfResidentsEditTab)).EndInit();
+            this.tpAboutHotel.ResumeLayout(false);
+            this.tpAboutHotel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRoomsNumber)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -696,32 +857,40 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tbArrivalDateEditPage;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tpEdit;
+        private System.Windows.Forms.TabPage tpAboutHotel;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpBirthDateEditPage;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbNameEditTab;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbSurnameEditTab;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbGenderEditTab;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mtbPassportSeriesEditTab;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.MaskedTextBox mtbPassportNumberEditTab;
+        private System.Windows.Forms.MaskedTextBox mtbPhoneNumberEditTab;
+        private System.Windows.Forms.NumericUpDown nudRoomNumberEditTab;
+        private System.Windows.Forms.NumericUpDown nudAmountOfResidentsEditTab;
+        private System.Windows.Forms.CheckBox cbWithChildrenEditTab;
+        private System.Windows.Forms.DateTimePicker dtpArrivalDateEditTab;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dtpDepartureDateEditTab;
+        private System.Windows.Forms.ComboBox cbChooseUser;
+        private System.Windows.Forms.Button bSetRoomsNumber;
+        private System.Windows.Forms.NumericUpDown nudRoomsNumber;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.RichTextBox rtbUnoccupiedRooms;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.RichTextBox rtbOccupiedRooms;
+        private System.Windows.Forms.Label label18;
     }
 }
 
