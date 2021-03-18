@@ -34,9 +34,11 @@ namespace CzechHotel
             UsrController = new UserController(dbController);
             HtlController = new HotelController(dbController);
 
+            // Макс. номер комнаты
+            nudRoomNumber.Maximum = HtlController.RoomsNumber;
+
             //Вкладка "Редактировать"
             FillUsersComboBox();
-
             //Вкладка "Об отеле"
             nudRoomsNumber.Minimum = HtlController.GetOccupiedRoomsBiggestNum();
         }
@@ -266,5 +268,13 @@ namespace CzechHotel
                 MessageBox.Show("Не удалось отредактировать данные о постольце.");
             }
         }
-    }
+
+		private void cbWithChildren_CheckedChanged(object sender, EventArgs e)
+		{
+            if (cbWithChildren.Checked)
+                nudAmountOfResidents.Minimum = 2;
+            else
+                nudAmountOfResidents.Minimum = 1;
+        }
+	}
 }
