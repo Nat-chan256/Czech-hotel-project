@@ -11,14 +11,14 @@ namespace CzechHotel.Controllers
 {
     class UserController
     {
-        private List<UserModel> users;
+        private List<UserModel> usersCache;
         public List<UserModel> Users 
         { 
             get 
             {
-                if (users == null)
-                    users = DbController.GetAllUsersData();
-                return users; 
+                if (usersCache == null)
+                    usersCache = DbController.GetAllUsersData();
+                return usersCache; 
             } 
         }
         private DBController DbController;
@@ -30,8 +30,8 @@ namespace CzechHotel.Controllers
         
         public List<UserModel> GetUsersData()
         {
-            users = DbController.GetAllUsersData();
-            return users;
+            usersCache = DbController.GetAllUsersData();
+            return Users;
         }
 
         public void SetNewUserData(UserModel user, string genderName, DateTime birthDate,
@@ -39,6 +39,7 @@ namespace CzechHotel.Controllers
            bool withChildren, int amountOfResidents, DateTime arrivalDate,
            DateTime departureDate)
         {
+            //Заполняем поля пользователя
             string passNum = user.PassportNumber.ToString();
             user.Gender = new UserModel.GenderModel(genderName);
             user.BirthDate = birthDate;
@@ -49,6 +50,11 @@ namespace CzechHotel.Controllers
             user.AmountOfResidents = amountOfResidents;
             user.ArrivalDate = arrivalDate;
             user.DepartureDate = departureDate;
+
+            //Меняем данные о пользователе в кэше
+            UpdateUserInCache(user.PassportSeries, user.PassportNumber, user);
+
+            //Передаем пользователя ДБ контроллеру
             DbController.UpdateUser(user, passNum);
         }
 
@@ -74,12 +80,24 @@ namespace CzechHotel.Controllers
         public void Save(UserModel user)
         {
             // Предотвращаем добавление уже существующего пользователя
-            users = DbController.GetAllUsersData();
+            usersCache = DbController.GetAllUsersData();
             if (InUsersList(user))
                 return;
 
             DbController.SaveUser(user);
-            users.Add(user);
+            usersCache.Add(user);
+        }
+
+        private void UpdateUserInCache(int passportSeries, int passportNumber, UserModel updatedUser)
+        {
+            for (int i = 0; i < usersCache.Count; ++i) //Ищем пользователя, которого нужно обновить
+                if (usersCache[i].PassportSeries == passportSeries && usersCache[i].PassportNumber == passportNumber)
+                {
+                    usersCache[i] = updatedUser;
+                    return;
+                }
+            //Если не нашли пользователя, то добавляем его в кэш
+            usersCache.Add(updatedUser);
         }
     }
 }

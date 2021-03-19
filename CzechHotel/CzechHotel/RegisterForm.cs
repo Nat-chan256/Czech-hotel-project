@@ -32,6 +32,7 @@ namespace CzechHotel
             //Контроллеры
             DBController dbController = new DBController();
             UsrController = new UserController(dbController);
+            UsrController.OpenConnection();
             HtlController = new HotelController(dbController);
 
             // Макс. номер комнаты
@@ -276,5 +277,10 @@ namespace CzechHotel
             else
                 nudAmountOfResidents.Minimum = 1;
         }
-	}
+
+        private void RegisterForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            UsrController.CloseConnection();
+        }
+    }
 }
