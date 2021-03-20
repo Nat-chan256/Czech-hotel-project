@@ -40,6 +40,11 @@ namespace CzechHotel
 
             //Вкладка "Редактировать"
             FillUsersComboBox();
+            dtpArrivalDateEditTab.MinDate = DateTime.Now.AddYears(-2);
+            dtpArrivalDateEditTab.MaxDate = DateTime.Now.AddMonths(1);
+            dtpDepartureDateEditTab.MinDate = dtpArrivalDateEditTab.MinDate.AddDays(1);
+            dtpDepartureDateEditTab.MaxDate = DateTime.Now.AddMonths(6);
+
             //Вкладка "Об отеле"
             nudRoomsNumber.Minimum = HtlController.GetOccupiedRoomsBiggestNum();
         }
@@ -160,7 +165,7 @@ namespace CzechHotel
         //Заполнение полей вкладки "Редактировать" данными о пользователе user
         private void fillFieldsWithUserData(UserModel user)
         {
-            //Задаеи значения полей
+            //Задаем значения полей
             tbNameEditTab.Text = user.Name;
             tbSurnameEditTab.Text = user.Surname;
             tbGenderEditTab.Text = user.Gender.Name;

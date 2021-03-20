@@ -63,6 +63,7 @@ namespace CzechHotel.Controllers
             DbController.CloseConnection();
         }
 
+        
         // Проверяет совпадение паспортных данных пользователя user с паспортными данными одного из пользователей из списка Users
         private bool InUsersList(UserModel user)
         {
@@ -72,6 +73,8 @@ namespace CzechHotel.Controllers
             return false;
         }
 
+        //Открытие соединения
+        //При каждом очередном открытии происходит удаление записей годичной или более давности
         public void OpenConnection()
         {
             DbController.OpenConnection();

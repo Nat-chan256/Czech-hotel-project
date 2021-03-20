@@ -29,7 +29,7 @@ namespace CzechHotel.Models
         public DateTime ArrivalDate { get; set; }
         public DateTime DepartureDate { get; set; }
 
-        public UserModel(string name, string surname, int passportSeries, bool withChildren)
+        private UserModel(string name, string surname, int passportSeries, bool withChildren)
         {
             Name = name;
             Surname = surname;

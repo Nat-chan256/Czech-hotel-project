@@ -2,21 +2,21 @@
 using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CzechHotel.Controllers
 {
     class DBController
     {
-        private string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\\..\\Database\\CzechHotel.mdb;";
+        private static string location = System.Reflection.Assembly.GetExecutingAssembly().Location;
+        private static string pathToExe = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\..\\"));
+        private static string pathToDB = pathToExe + "CzechHotel\\Database\\CzechHotel.mdb";
+        private string connectionString = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={pathToDB};";
         private OleDbConnection connection;
-
-        public DBController()
-        {
-            OpenConnection();
-        }
 
 
         //Геттеры
@@ -136,10 +136,24 @@ namespace CzechHotel.Controllers
             connection.Close();
         }
 
+        //Удаление записей годовой и более давности
+        private void DeleteOldRecords()
+        {
+            string query = "DELETE FROM Users WHERE DateDiff(\'d\', DepartureDate, Now()) >= 366";
+
+            OleDbCommand command = new OleDbCommand(query, connection);
+
+            command.ExecuteNonQuery();
+        }
+
+        //Открытие соединения
         public void OpenConnection()
         {
             connection = new OleDbConnection(connectionString);
             connection.Open();
+
+            //Удаление "устаревших" записей
+            DeleteOldRecords();
         }
 
         public void SaveUser(UserModel user)
